@@ -1,0 +1,17 @@
+# Terraform state and crash logs
+*.tfstate
+*.tfstate.*
+crash.log
+
+# Sensitive files
+account.json
+
+# Local .terraform directories
+.terraform/
+
+# VS Code settings
+.vscode/
+
+# OS generated files
+.DS_Store
+Thumbs.db

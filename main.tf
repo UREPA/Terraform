@@ -14,13 +14,6 @@ provider "google" {
   zone        = var.zone
 }
 
-variable "project" {}
-variable "region" { default = "europe-west4" }
-variable "zone" { default = "europe-west4-a" }
-variable "instance_name" { default = "wordpress-vm" }
-variable "machine_type" { default = "e2-micro" }
-variable "disk_size_gb" { default = 10 }
-
 resource "google_compute_instance" "wordpress" {
   name         = var.instance_name
   machine_type = var.machine_type
@@ -53,8 +46,4 @@ resource "google_compute_firewall" "default" {
   }
 
   target_tags = ["http-server", "https-server"]
-}
-
-output "wordpress_ip" {
-  value = google_compute_instance.wordpress.network_interface[0].access_config[0].nat_ip
 }
