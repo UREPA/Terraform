@@ -45,5 +45,6 @@ resource "google_compute_firewall" "default" {
     ports    = ["80", "443"]
   }
 
-  target_tags = ["http-server", "https-server"]
+  source_ranges = ["0.0.0.0/0"]
+  target_tags   = ["http-server", "https-server"]
 }
