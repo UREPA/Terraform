@@ -15,3 +15,6 @@ account.json
 # OS generated files
 .DS_Store
 Thumbs.db
+
+.logs
+.terraform.lock.hcl
